@@ -1,0 +1,323 @@
+.todo-page {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafc;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.todo-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: #5c7cfa;
+  margin-bottom: 30px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #d0d7ff;
+  border-radius: 15px;
+  background: #f1f3ff;
+  color: #495057;
+  transition: all 0.3s ease;
+
+  outline: none;
+}
+
+.todo-input:focus {
+  border-color: #5c7cfa;
+  box-shadow: 0 0 8px rgba(92, 124, 250, 0.3);
+  outline: none;
+}
+
+.todo-add-btn {
+  background: linear-gradient(135deg, #845ef7, #5c7cfa);
+  color: white;
+  padding: 15px 25px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.todo-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(132, 94, 247, 0.4);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #ffd8d8, #ffe3ff);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.todo-check {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: #845ef7;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  color: #adb5bd;
+}
+
+.todo-edit-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #d0d7ff;
+  background: #f1f3ff;
+
+  outline: none;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.edit-btn {
+  background: #ff922b;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.edit-btn:hover {
+  background: #fd7e14;
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: #fa5252;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.delete-btn:hover {
+  background: #f03e3e;
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background: #37b24d;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.save-btn:hover {
+  background: #2f9e44;
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #748ffc;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.cancel-btn:hover {
+  background: #5c7cfa;
+  transform: translateY(-2px);
+}
+
+.todo-empty {
+  text-align: center;
+  font-size: 22px;
+  color: #845ef7;
+  margin-top: 80px;
+  font-weight: bold;
+}
+.navbar {
+  background: linear-gradient(135deg, #5c7cfa, #845ef7);
+  padding: 18px 30px;
+  display: flex;
+  gap: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffe066;
+  transform: scale(1.05);
+}
+
+.nav-link.active {
+  color: #ffe066;
+  border-bottom: 3px solid #ffe066;
+  padding-bottom: 3px;
+}
+
+.product-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.product-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.product-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.product-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.add-btn,
+.cancel-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #4a90e2;
+  color: white;
+}
+.cancel-btn {
+  background-color: #aaa;
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-btn {
+  background-color: #ffc15d;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #b00000;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.empty-text {
+  grid-column: 1/-1;
+  text-align: center;
+  color: #888;
+}
