@@ -1,18 +1,18 @@
+// TodoItem.jsx
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteTodo, toggleTodo, editTodo } from "../store/todoSlice";
-
 
 export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
+  const user = useSelector((s) => s.auth.user); // ✅ qo‘shildi
+
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(todo.title);
 
   const save = () => {
     const trimmed = text.trim();
-    if (trimmed) {
-      dispatch(editTodo({ id: todo.id, title: trimmed }));
-    }
+    if (trimmed) dispatch(editTodo({ id: todo.id, title: trimmed }));
     setEditing(false);
   };
 
@@ -21,8 +21,8 @@ export default function TodoItem({ todo }) {
       <input
         type="checkbox"
         checked={todo.checked}
-        onChange={() => dispatch(toggleTodo(todo.id))}
-        className="todo-check"
+        onChange={() => user && dispatch(toggleTodo(todo.id))} // ❗ login bo‘lsa
+        disabled={!user} // ❗ bo‘lmasa blok
       />
 
       {editing ? (
@@ -39,29 +39,32 @@ export default function TodoItem({ todo }) {
         </span>
       )}
 
-      <div className="todo-actions">
-        {editing ? (
-          <>
-            <button className="save-btn" onClick={save}>
-              Saqlash
+      {/* CRUD buttonlar faqat login bo‘lsa */}
+      {user && (
+        <div className="todo-actions">
+          {editing ? (
+            <>
+              <button className="save-btn" onClick={save}>
+                Saqlash
+              </button>
+              <button className="cancel-btn" onClick={() => setEditing(false)}>
+                Bekor
+              </button>
+            </>
+          ) : (
+            <button className="edit-btn" onClick={() => setEditing(true)}>
+              Tahrirlash
             </button>
-            <button className="cancel-btn" onClick={() => setEditing(false)}>
-              Bekor
-            </button>
-          </>
-        ) : (
-          <button className="edit-btn" onClick={() => setEditing(true)}>
-            Tahrirlash
-          </button>
-        )}
+          )}
 
-        <button
-          className="delete-btn"
-          onClick={() => dispatch(deleteTodo(todo.id))}
-        >
-          O‘chirish
-        </button>
-      </div>
+          <button
+            className="delete-btn"
+            onClick={() => dispatch(deleteTodo(todo.id))}
+          >
+            O‘chirish
+          </button>
+        </div>
+      )}
     </div>
   );
 }
